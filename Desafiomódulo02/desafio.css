@@ -1,0 +1,236 @@
+@charset "UTF-8";/*PERMITE CARACTÉRES ESPECIAIS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*@import IMPORTA ALGO, url(''); DEFINE O LINK EXTERNO*/
+
+@font-face{/*PERMITE O USO DE FONTES DENTRO DA PASTA DO PROJETO*/
+    font-family: 'Android';/*NOMEIA A FONTE*/
+    src: url('Fontes/IDroid.otf') format('opentype');/*IMPORTAÇÃO DE UM ARQUIVO FONTE*/
+    /*src: INCORPORA RECURSO NO DOCUMENTO, url TRAZ UM CAMINHO, format DEFINE O FORMATO*/
+    font-weight: normal;/*ESPECÍFICA PESO OU INTENSIDADE DA FONTE*/
+}
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+* {/*CONFIGURAÇÃO GLOBAL, SELECIONA TODOS OS ELEMENTOS DO HTML*/
+    margin: 0px;/*DEFINE O TAMANHO DA MARGEM*/
+    padding: 0px;/*DEFINE O TAMANHO DO PREENCHIMENTO*/
+}
+
+:root {/*root CRIA UMA PSEUDOCLASSE QUE É A RAIZ DO DOCUMENTO*/
+    --cor0:#c5ebd6;/*VARIÁVEL GLOBAL,#c5ebd6 RECEBEU O NOME DE --cor0*/
+    --cor1:#83e1ad;/*VARIÁVEL GLOBAL,#83e1ad RECEBEU O NOME DE --cor1*/
+    --cor2:#3ddc84;/*VARIÁVEL GLOBAL,#3ddc84 RECEBEU O NOME DE --cor2*/
+    --cor3:#2fa866;/*VARIÁVEL GLOBAL,#2fa866 RECEBEU O NOME DE --cor3*/
+    --cor4:#1a5c37;/*VARIÁVEL GLOBAL,#1a5c37 RECEBEU O NOME DE --cor4*/
+    --cor5:#063d1e;/*VARIÁVEL GLOBAL,#063d1e RECEBEU O NOME DE --cor5*/
+    /*PARA INVOCAR AS CORES DENTRO DOS PARÂMETROS BASTA APERTAR CRTL + ESPAÇO*/
+    
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;/*VARIÁVEL GLOBAL, A FONTE FOI NOMEADA*/
+    --fonte-destaque: 'Bebas Neue', cursive;/*VARIÁVEL GLOBAL, A FONTE FOI NOMEADA*/
+    --fonte-android: 'Android', cursive;/*VARIÁVEL GLOBAL, A FONTE FOI NOMEADA*/
+}
+
+body {/*ABRE AS DENIFIÇÕES DA TAG body*/
+    background-color: white;/*DEFINE A COR DE FUNDO*/
+    font-family: var(--fonte-padrao);/*DEFINE A FONTE*/
+}/*FECHA AS DENIFIÇÕES DA TAG body*/
+
+a.externo::after {/*a É A TAG, externo É A class DEFINIDA NO HTML,:: PUXA O PSEUDOELEMENTO after= DEPOIS*/
+    content: '\00A0\1f517';/*A PROPIEDADE content É USADA PARA GERAR CONTEÚDO EM UM ELEMENTO, \00A0 INSERE ESPAÇO
+    \1f517 INSERE UM CLIPE*/
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));/*background-image: USADA PARA
+    INSERIR IMAGENS COMO PLANO DE FUNDO DE UM ELEMENTO, linear-gradient CRIA DEGRADÊ, to bottom QUER DIZER PARA BAIXO,
+    var(--cor3) E var(--cor5) SÃO AS CORES USADAS NO DEGRADÊ*/
+    background-color: var(--cor4);/*DEFINE A COR DE FUNDO*/
+    min-height: 150px;/*ALTURA MÍNIMA*/
+    text-align: center;/*CENTRALIZA O TEXTO*/
+    padding-top: 40px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+}
+
+header > h1#onetitle {/*ABRE AS DEFINIÇÕES DA TAG header, O SINAL > DEFINE QUE h1 FILHO DE header*/
+    color: white;/*DEFINE A COR DA LETRA*/
+    font-family: var(--fonte-destaque);/*DEFINE A FONTE*/
+    font-size: 3em;/*TAMANHO DA FONTE*/
+    font-weight: normal;/*ESPESSURA DA FONTE*/
+    margin-top: 0px;/*DEFINE O ESPAÇO ACIMA DE UM ELEMENTO*/
+    margin-bottom: 20px;/*DEFINE MARGEM NA PARTE INFERIOR, VALOR POSITIVO COLOCA MAIS LONGE,
+    VALOR NEGATIVO APROXIMA*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);/*SOMBRA NO TEXTO*/
+}/*FECHA AS DEFINIÇÕES DA TAG header*/
+
+header > p {/*DEFINIÇÕES PARA A TAG p QUE ESTÁ DENTRO DA TAG header*/
+    font-family: var(--fonte-padrao);/*DEFINE A FONTE*/
+    font-size: 1.2em;/*TAMANHO DA FONTE*/
+    color: white;/*COR DA FONTE*/
+    max-width: 600px;/*LARGURA MÁXIMA*/
+    margin: auto;/*CENTRALIZA A MARGEM*/
+    padding-right: 10px;/*PREENCHIMENTO DIREITO*/
+    padding-left: 10px;/*PREENCHIMENTO ESQUERDO*/
+    text-align: center;/*ALINHA O TEXTO*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);/*SOMBRA NO TEXTO*/
+    margin-bottom: 20px;
+}
+
+nav {/*ABRE DEFINIÇÕES PARA A TAG nav*/
+    margin-top: 30px;
+    padding: 10px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);/*ADICIONA EFEITOS DE SOMBRA*/
+}
+
+nav > a{/*ABRE DEFINIÇÕES PAGA A TAG a QUE É FILHA DA TAG nav*/
+    color: var(--cor1);/*COR DA FONTE*/
+    padding: 10px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+    border-radius: 5px;/*CRIA BORDAS ARREDONDADAS*/
+    text-decoration: none;/*text-decoration=DECORAÇÃO DE TEXTO, none=NENHUM*/
+    font-weight: bold;/*font-weight ESPECIFICA PESO OU INTENSIDADE DA FONTE,bold QUER DIZER
+    NEGRITO*/
+    transition-duration: 0.5s;/*DEFINE O TEMPO DE DURAÇÃO DA ANIMAÇÃO*/
+}
+
+nav > a:hover {/*nav > a ABRE AS DEFINIÇÕES PAGA A TAG a QUE É FILHA DA TAG nav,: CHAMA A
+    PSEUDO-CLASSE hover QUE CAUSA UM EFEITO DE LUZ ACESA QUANDO O CURSOR DO MOUSE É PASSADO ENCIMA*/
+    background-color: var(--cor3);/*COR DE FUNDO*/
+    color:var(--cor4)/*COR PRINCIPAL*/
+}
+
+main {/*ABRE DEFINIÇÕES PARA A TAG main*/
+    min-width: 300px;/*LARGURA MÍNIMA DE 300px(NÃO DIMINUI MAIS QUE ISSO)*/
+    max-width: 1000px;/*LARGURA MÁXIMA DE 1000px(NÃO AUMENTA MAIS QUE ISSO)*/
+    margin: auto;/*MARGEM AUTOMÁTICA,DEFINE QUE A MARGEM ESCOLHIDA SEJA AUTOMATIZADA*/
+    margin-bottom: 30px;/*DEFINE A MARGIN ÁREA NA PARTE INFERIOR DE UM ELEMENTO. UM VALOR
+    POSITIVO COLOCA O VALOR MAIS LONGE DE OUTROS ELMENTOS VIZINHOS, ENQUANTO UM VALOR NEGATIVO, APROXIMA.*/
+    padding: 25px;/*DEFINE O PREENCHIMENTO*/
+    background-color:var(--cor0);/*DEFINE A COR DE FUNDO*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);/*CRIA EFEITO DE SOMBRA*/
+    border-bottom-left-radius: 10px;/*DEFINE O RAIO DA BORDA INFERIOR ESQUERDA*/
+    Border-bottom-right-radius: 10px;/*DEFINE O RAIO DA BORDA INFERIOR DIREITA*/
+}/*FECHA DEFINIÇÕES PARA A TAG main*/
+
+main img {/*ABRE DEFINIÇÕES PARA TAG img QUE ESTÁ DENTRO DE main*/
+    width: 100%;/*DEFINE A PORCENTAGEM DA LARGURA QUE DEVE SER EXIBIDA*/
+}
+
+main img.pequena {/*ABRE DEFINIÇÕES PARA A TAG img QUE CONTÉM class="pequena"*/
+    max-width: 350px;/*LARGURA MÁXIMA*/
+    display: block;/*UMA IMAGEM POR PADRÃO NÃO É UM BLOCO, SENDO ASSIM, O PARÂMETRO
+    display: block; DEFINE QUE A TAG img SEJA RENDEREIZADA COMO UM BLOCO*/
+    margin: auto;/*CENTRALIZA A MARGEM, AUTOMATIZA A MARGEM (ESSA TAG SÓ FUNCIONA DENTRO DE BLOCOS*/
+}
+
+div.video {/*ABRE DEFINIÇÕES PARA A TAG div, . PUXA A CLASSE video*/
+    background-color: var(--cor5);/*COR DE FUNDO*/
+    margin: 0px -20px 30px -20px;/*MARGEM*/
+    padding: 20px;/*PREENCHIMENTO,DEFINE DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+    position: relative;/*position=POSIÇÃO, relative=RELATIVA*/
+    padding-bottom: 56.7%;/*FUNDO DE PREENCHIMENTO*/
+}
+
+div.video > iframe {/*A TAG div CONTEM A CLASSE video (PUXADA PELO SINAL DE .), O SINAL DE > DEFINE QUE iframe É FILHA DE div*/
+    position: absolute;/*position=POSIÇÃO, absolute=ABSOLUTA;*/
+    top: 5%;/*DISTÂNCIA DO CONTEÚDO DA MARGEM, top=TOPO*/
+    left: 5%;/*DISTÂNCIA DO CONTEÚDO DA MARGEM, left=ESQUERDA*/
+    width: 90%;/*PREENCHIMENTO DO CONTEÚDO, width=LARGURA*/
+    height: 90%;/*PREENCHIMENTO DO CONTEÚDO,height=ALTURA*/
+}
+
+main h1 {/*ABRE DEFINIÇÕES PARA O h1 QUE ESTÁ DENTRO DA TAG main*/
+    font-family: var(--fonte-android);/*DEFINE A FONTE*/
+    font-weight: normal;/*ESPESSURA DA FONTE*/
+    color: var(--cor5);/*DEFINE A COR DA FONTE*/
+    font-size: 1.8em;/*TAMANHO DA FONTE*/
+}
+
+main h2{/*ABRE DEFINIÇÕES PARA h2 QUE É FILHO DE article QUE É FILHO DE main*/
+    font-family: var(--fonte-android);/*DEFINE A FONTE*/
+    color: var(--cor4);/*DEFINE COR DA FONTE*/
+    font-size: 1.3em;/*TAMANHO DA FONTE*/
+    font-weight: normal;/*ESPESSURA DA FONTE*/
+    background-image: linear-gradient(to right, var(--cor1), transparent);/*background-image=IMAGEM DE FUNDO,
+    linear-gradient=GRADIENTE LINEAR, to right=PARA A DIREITA, transparent=TRANSPARENTE*/
+    text-indent: 8px;/*RECÚO DE TEXTO/PARÁGRAFO*/
+}
+
+main p {
+    margin: 15px 0px;/*CONFIGURA A DISTÂNCIA DA MARGEM*/
+    text-align: justify;/*ALINHAMENTO DE TEXTO JUSTIFICADO*/
+    text-indent: 30px;/*RECUO DE PARÁGRAFO*/
+    font-size: 1em;/*TAMANHO DA LETRA*/
+    line-height: 2em;/*ESPAÇAMENTO ENTRE LINHAS*/
+}
+
+main strong {
+    color: var(--cor4);/*DEFINE COR DA FONTE*/
+    font-weight: bold;/*font-weight ESPECIFICA PESO OU INTENSIDADE DA FONTE, bold=NEGRITO*/
+}
+
+main a {
+    text-decoration: none;/*text-decoration=DECORAÇÃO DE TEXTO, none=NENHUM*/
+    font-weight: bold;/*font-weight ESPECIFICA PESO OU INTENSIDADE DA FONTE, bold=NEGRITO*/
+    color: var(--cor5);/*COR DA FONTE*/
+    background-color: var(--cor1);/*COR DE FUNDO*/
+    padding: 2px 6px;/*DEFINE A DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+}
+
+main a:hover{/*main a ABRE DEFINIÇÕES PARA A TAG a QUE ESTÁ DENTRO DE main, : PUXA A PSEUDO-CLASSE
+hover QUE CRIAR EFEITO DE ASCENDER A LUZ QUANDO PASSAR O CURSOR DO MOUSE ENCIMA*/
+    text-decoration: underline;/*text-decoration=DECORAÇÃO DE TEXTO, underline=SUBLINHADO*/
+    color: var(--cor4);/*COR DA FONTE*/
+}
+
+aside {
+    background-color: var(--cor1);/*COR DE FUNDO*/
+    padding: 1px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+    border-radius: 15px;/*INSERE VÉRTICES ARREDONDADAS*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);/*INSERE SOMBRA NA CAIXA*/
+}
+
+aside > h3 {/*ABRE DEFINIÇÕES PARA A TAG h3 QUE É FILHA DE aside, O SINAL > INDICA QUE A TAG É FILHA*/
+    background-color:var(--cor4) ;/*COR DE FUNDO*/
+    color: white;/*COR DA FONTE*/
+    padding: 10px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+    
+    border-radius: 10px 10px 0px 0px;/*DEFINE O RAIO DA BORDA*/
+}
+
+aside p{
+    padding: 15px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+}
+
+aside > ul {/*ABRE DEFINIÇÕES PARA A TAG ul QUE ESTÁ DENTRO DE aside, aside > ul QUER DIZER QUE aside É PAI DE ul*/
+    list-style-type: '\2714\00A0\00A0';/*list-style-type=TIPO DE ESTILO LISTA, '\2714' REPRESENTA O SINAL DE VISTO,
+    \00A0 INSERE ESPAÇO*/
+    list-style-position: inside;/*list-style-position=POSIÇÃO DA LISTA,inside=dentro*/
+    columns: 2;/*columns=COLUNA, 2 É UM NÚMERO, ESSA PROPIEDADE DIVIDE A LISTA ul EM DUAS COLUNAS*/
+    padding: 15px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+}
+
+footer {/*ABRE DEFINIÇÕES PARA A TAG footer*/
+    background-color: var(--cor5);/*DEFINE COR DE FUNDO*/
+    color: white;/*DEFINE COR PRINCIPAL DA FONTE*/
+    text-align: center;/*text-align=ALINHAMENTO DE TEXTO, center=CENTRALIZADO*/
+    font-size: 0.8em;/*TAMANHO DA FONTE*/
+    padding: 5px;/*DEFINE UMA DISTÂNCIA ENTRE O CONTEÚDO DE UM ELEMENTO E SUAS BORDAS*/
+}
+
+footer a {/*ABRE DEFINIÇÕES PARA A TAG a QUE ESTÁ EM footer*/
+    color: white;/*DEFINE A COR DA FONTE*/
+    font-weight: bolder;/*font-weight=PESO DA FONTE,bolder=NEGRITO*/
+    text-decoration: none;/*text-decoration=DECORAÇÃO DE TEXTO, none=NENHUM*/
+}
+
+footer a:hover {/*ABRE DEFINIÇÕES PARA A TAG a QUE ESTÁ EM footer, : PUXA UMA PSEUDO-CLASSE hover QUE
+    CAUSA EFEITO DE LUZ ACESA QUANDO PASSAR O CURSOR DO MOUSE ENCIMA*/
+    text-decoration: underline;/*text-decoration=DECORAÇÃO DE TEXTO, underline=SUBLINHAR*/
+    color: var(--cor1);/*COR DA FONTE*/
+}
+
